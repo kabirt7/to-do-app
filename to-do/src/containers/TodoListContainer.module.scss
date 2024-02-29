@@ -1,0 +1,37 @@
+.container {
+  width: 50vw;
+  height: auto;
+  max-height: 60%;
+
+  &__upperButtons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+
+    Button {
+      margin-bottom: 1vh;
+    }
+  }
+
+  &__lowerButtons {
+    display: flex;
+    justify-content: center;
+    justify-content: flex-start;
+
+    Button {
+      margin-top: 1vh;
+    }
+
+    :nth-child(2) {
+      margin-left: 1vh;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: bisque;
+  }
+}
