@@ -1,0 +1,14 @@
+modal {
+  &__wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__article {
+    z-index: 1;
+    width: 50vh;
+    height: 50vh;
+  }
+}

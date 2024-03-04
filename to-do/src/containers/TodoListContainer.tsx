@@ -4,6 +4,7 @@ import TodoItem from "../components/TodoItem/TodoItem";
 import styles from "./TodoListContainer.module.scss";
 import { getAllTodoItems } from "../services/crud-logic";
 import { TodoItemInterface } from "../services/interfaces";
+import CrudModal from "../components/CrudModal/CrudModal";
 
 const TodoListContainer = () => {
   // declare state where we will store the to do items, init it as null
@@ -16,10 +17,26 @@ const TodoListContainer = () => {
   // eventually add toast notifications for adding, deleting etc
   const [todoItems, setTodoItems] = useState<TodoItemInterface[] | null>(null);
   const [selectedOption, setSelectedOption] = useState("");
+  const [openModal, setOpenModal] = useState("none");
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
   };
+
+  const addItem = () => {
+    console.log("heloo");
+  };
+
+  const editItem = () => {
+    console.log("heloo");
+  };
+
+  const deleteItem = () => {
+    console.log("heloo");
+  };
+
+  // const delete Item
+  // edit item functionality, causes modal to appear that is editable
 
   useEffect(() => {
     console.log(selectedOption);
@@ -42,8 +59,8 @@ const TodoListContainer = () => {
     <>
       <div className={styles.container}>
         <section className={styles.container__upperButtons}>
-          <Button shape="rectangle" label="ADD"></Button>
-          <Button shape="rectangle" label="SORT"></Button>
+          <Button shape="rectangle">ADD</Button>
+          <Button shape="rectangle">SORT</Button>
         </section>
         <section className={styles.container__main}>
           <TodoItem
@@ -64,11 +81,14 @@ const TodoListContainer = () => {
             ))}
         </section>
         <section className={styles.container__lowerButtons}>
-          <Button shape="rectangle" label="EDIT"></Button>
-          <Button shape="rectangle" label="DELETE"></Button>
+          <Button shape="rectangle">EDIT</Button>
+          <Button shape="rectangle">DELETE</Button>
         </section>
       </div>
       {/* if showModalisClicked then render Modal */}
+      {openModal == "edit" && (
+        <CrudModal setOpenModal={setOpenModal} submitFunction={addItem} />
+      )}
     </>
   );
 };
