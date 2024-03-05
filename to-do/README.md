@@ -26,3 +26,31 @@
 - Integrate in the Add and Edit Modals
 - Style these buttons
 - Integrate in delete functionality
+
+**5/4/24**
+- today went well, logging everything I had to do today last night was super helpful
+
+ACHIEVED:
+- fixed the CRUD Modal including making unique buttons (their typing was a lot easier when I handled all the logic in the container functions)
+- fixed the typing and simplified the generic Button component
+- Used the Controller component from RHF to automatically setState each time a letter is typed into the CRUD Modal. Set this to the passed down state from the container
+- Wrote the Edit, Delete and Add CRUD logic in my ts file
+- Used the container state to appropriately fire the CRUD functions and hence the CRUD logic
+- Updated Modal styling
+- BASIC FUNCTIONALITY COMPLETE
+
+**TOMORROW**
+- focus on error handling, this is something in future I need to implement as I go. I've been focussing on wrapping my head around making generic components in TSX but I feel confident with that now
+
+- if I get time it would be great to add Vitest testing initial config
+
+- add strikethrough functionality to the front-end
+
+FRONT END E.H.
+- my logic.ts file throws errors with very little detail, this can be easily updated. The same needs to be done for the container functions that fire them
+- validation for if the message is too long. This will be on backend too but I think I remember Alex saying to do this on front-end too
+- research logging strategy
+
+BACK END E.H.
+- need to implement a global exception handler
+- figure out how to validate the Boolean Column Completed
