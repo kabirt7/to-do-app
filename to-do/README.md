@@ -27,6 +27,7 @@
 - Style these buttons
 - Integrate in delete functionality
 
+**LOG**
 **5/4/24**
 - today went well, logging everything I had to do today last night was super helpful
 
