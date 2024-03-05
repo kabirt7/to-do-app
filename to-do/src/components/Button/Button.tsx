@@ -18,7 +18,6 @@ interface ButtonProps
   > {
   shape: string;
   children: any;
-  // setType?: "button" | "submit" | "reset";
   clickFunction: (arg: any) => any;
 }
 

@@ -1,4 +1,3 @@
-import Button from "../components/Button/Button";
 import TodoListContainer from "../containers/TodoListContainer";
 import styles from "./Home.module.scss";
 
