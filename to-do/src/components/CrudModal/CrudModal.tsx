@@ -6,8 +6,8 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 interface CrudModalProps {
   type?: string;
   selectedPost?: number;
-  setOpenModal: Dispatch<SetStateAction<string>>;
   submitFunction: SubmitHandler<FieldValues>;
+  closeModal: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 // to turn modal on use a state from the parent component
@@ -25,8 +25,8 @@ interface CrudModalProps {
 const CrudModal = ({
   type,
   selectedPost = 3,
-  setOpenModal,
   submitFunction,
+  closeModal,
 }: CrudModalProps) => {
   const { register, handleSubmit } = useForm();
 
@@ -44,22 +44,12 @@ const CrudModal = ({
       </article>
 
       <footer className={styles.modal__buttonWrap}>
-        <Button
-          shape="rectangle"
-          setType="submit"
-          click={submitFunction}
-          selectedPost={selectedPost}
-        >
+        <button type="submit" onClick={submitFunction}>
           Yes
-        </Button>
-        <Button
-          shape="rectangle"
-          setType="button"
-          click={setOpenModal}
-          selectedPost={selectedPost}
-        >
+        </button>
+        <button type="button" onClick={closeModal}>
           No
-        </Button>
+        </button>
       </footer>
     </form>
   );

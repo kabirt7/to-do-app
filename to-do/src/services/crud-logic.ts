@@ -1,7 +1,7 @@
 import { TodoItemInterface } from "./interfaces.ts";
 
 export const getAllTodoItems = async (): Promise<TodoItemInterface[]> => {
-  const response = await fetch("http://localhost:8080/posts");
+  const response = await fetch("http://localhost:8080/items");
   if (!response.ok) {
     throw new Error("Failed to get posts");
   }

@@ -14,22 +14,15 @@ interface ButtonProps
       ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     >,
-    "onClick" | "type"
+    "onClick"
   > {
   shape: string;
   children: any;
-  setType?: "button" | "submit" | "reset";
-  click?: (arg: any) => void;
-  selectedPost?: number | undefined;
+  // setType?: "button" | "submit" | "reset";
+  clickFunction: (arg: any) => any;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  shape,
-  children,
-  setType = "button",
-  click,
-  selectedPost,
-}) => {
+const Button: React.FC<ButtonProps> = ({ shape, children, clickFunction }) => {
   const buttonStyle = {
     padding: shape === "square" ? "10px" : "10px 20px",
     borderRadius: shape === "square" ? "5px" : "none",
@@ -39,8 +32,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       style={buttonStyle}
       className={styles.button}
-      type={setType}
-      onClick={() => click && selectedPost !== undefined && click(selectedPost)}
+      onClick={clickFunction}
     >
       {children}
     </button>

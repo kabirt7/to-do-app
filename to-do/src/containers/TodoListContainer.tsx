@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import Button from "../components/Button/Button";
 import TodoItem from "../components/TodoItem/TodoItem";
 import styles from "./TodoListContainer.module.scss";
@@ -23,15 +23,27 @@ const TodoListContainer = () => {
     setSelectedOption(event.target.value);
   };
 
-  const addItem = () => {
+  const openAddModal = () => {
+    setOpenModal("add");
+  };
+
+  const openEditModal = () => {
+    setOpenModal("edit");
+  };
+
+  const closeModal: MouseEventHandler<HTMLButtonElement> = () => {
+    setOpenModal("none");
+  };
+
+  const addItem = async () => {
     console.log("heloo");
   };
 
-  const editItem = () => {
+  const editItem = async () => {
     console.log("heloo");
   };
 
-  const deleteItem = () => {
+  const deleteItem = async () => {
     console.log("heloo");
   };
 
@@ -59,8 +71,12 @@ const TodoListContainer = () => {
     <>
       <div className={styles.container}>
         <section className={styles.container__upperButtons}>
-          <Button shape="rectangle">ADD</Button>
-          <Button shape="rectangle">SORT</Button>
+          <Button shape="rectangle" clickFunction={openAddModal}>
+            ADD
+          </Button>
+          <Button shape="rectangle" clickFunction={openAddModal}>
+            SORT
+          </Button>
         </section>
         <section className={styles.container__main}>
           <TodoItem
@@ -81,13 +97,17 @@ const TodoListContainer = () => {
             ))}
         </section>
         <section className={styles.container__lowerButtons}>
-          <Button shape="rectangle">EDIT</Button>
-          <Button shape="rectangle">DELETE</Button>
+          <Button shape="rectangle" clickFunction={openEditModal}>
+            EDIT
+          </Button>
+          <Button shape="rectangle" clickFunction={deleteItem}>
+            DELETE
+          </Button>
         </section>
       </div>
       {/* if showModalisClicked then render Modal */}
       {openModal == "edit" && (
-        <CrudModal setOpenModal={setOpenModal} submitFunction={addItem} />
+        <CrudModal submitFunction={addItem} closeModal={closeModal} />
       )}
     </>
   );
