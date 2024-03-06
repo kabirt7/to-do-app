@@ -1,6 +1,6 @@
 import { TodoItemInterface } from "./interfaces.ts";
 
-const API_URL = "http://localhost:8080/iteems";
+const API_URL = "http://localhost:8080/items";
 
 export const getAllTodoItems = async (): Promise<TodoItemInterface[]> => {
   try {
@@ -67,41 +67,22 @@ export const editTodoItem = async (
     return await response.json();
   } catch (error) {
     console.log(error);
-
     throw error;
   }
 };
 
 export const deleteTodoItem = async (id: number) => {
-  const response = await fetch(`${API_URL}/${id}`, {
-    method: "DELETE",
-  });
-  if (!response.ok) {
-    throw new Error("Failed to delete post");
+  try {
+    const response = await fetch(`${API_URL}/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      const errorMessage = `Failed to delete item. Status: ${response.status}, ${response.statusText}`;
+      console.error(errorMessage);
+      throw new Error(errorMessage);
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
 };
-
-// export const postBlogPost = async (title, content, category) => {
-//   const url = "http://localhost:8080/posts";
-//   const postData = {
-//     title: title,
-//     content: content,
-//     category: category,
-//   };
-
-//   const response = await fetch(url, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(postData),
-//   });
-
-//   if (!response.ok) {
-//     throw new Error("Failed to post blog post");
-//   }
-
-//   // Assuming you want to return the JSON response from the server
-//   const responseData = await response.json();
-//   return responseData;
-// };

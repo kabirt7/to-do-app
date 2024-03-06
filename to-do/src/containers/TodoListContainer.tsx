@@ -97,7 +97,7 @@ const TodoListContainer = () => {
   }, []);
 
   const modalOpenThenBlurBg = {
-    filter: openModal != "none" ? "blur(4px)" : "none",
+    filter: openModal != "none" && selectedOption != -1 ? "blur(4px)" : "none",
   };
 
   return (
@@ -135,7 +135,7 @@ const TodoListContainer = () => {
       {openModal == "add" && (
         <CrudModal submitFunction={addItem} closeModal={closeModal} />
       )}
-      {openModal == "edit" && (
+      {selectedOption != -1 && openModal == "edit" && (
         <CrudModal submitFunction={editItem} closeModal={closeModal} />
       )}
     </main>
