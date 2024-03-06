@@ -48,8 +48,9 @@ const TodoListContainer = () => {
       }
       console.log("Added item:", addedItem);
     } catch (error) {
-      // handle error
-      console.log("Error adding item:", error);
+      console.log(error);
+
+      // add toast notification with the error
     }
   };
 
@@ -62,10 +63,9 @@ const TodoListContainer = () => {
       }
       console.log("Edited item:", editedItem);
     } catch (error) {
-      // Handle error
-      console.log("Error editing item:", error);
+      console.log(error);
 
-      // throw another error potent
+      // add toast notification with the error
     }
   };
 
@@ -74,8 +74,9 @@ const TodoListContainer = () => {
       await deleteTodoItem(selectedOption);
       await getAllItems();
     } catch (error) {
-      // handle error
-      console.log("Error deleting item:", error);
+      console.log(error);
+
+      // add toast notification with the error
     }
   };
 
@@ -88,7 +89,7 @@ const TodoListContainer = () => {
       try {
         await getAllItems();
       } catch (error) {
-        alert(error);
+        console.log(error);
       }
     };
 

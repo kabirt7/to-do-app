@@ -1,16 +1,22 @@
 import { TodoItemInterface } from "./interfaces.ts";
 
-const API_URL = "http://localhost:8080/items";
+const API_URL = "http://localhost:8080/iteems";
 
 export const getAllTodoItems = async (): Promise<TodoItemInterface[]> => {
-  const response = await fetch(API_URL);
-  if (!response.ok) {
-    const errorMessage = `Failed to get posts. Status: ${response.status}, ${response.statusText}`;
-    console.error(errorMessage);
-    throw new Error(errorMessage);
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) {
+      const errorMessage = `Failed to get posts. Status: ${response.status}, ${response.statusText}`;
+      console.error(errorMessage);
+      throw new Error(errorMessage);
+    }
+    const data: TodoItemInterface[] = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+    // this error ^ is the one that gets sent to the async function that calls it and catches the error
   }
-  const data: TodoItemInterface[] = await response.json();
-  return data;
 };
 
 export const addTodoItem = async (text: string): Promise<TodoItemInterface> => {
@@ -24,12 +30,14 @@ export const addTodoItem = async (text: string): Promise<TodoItemInterface> => {
     });
 
     if (!response.ok) {
-      throw new Error("Error adding task");
+      const errorMessage = `Failed to add item. Status: ${response.status}, ${response.statusText}`;
+      console.error(errorMessage);
+      throw new Error(errorMessage);
     }
 
     return await response.json();
   } catch (error) {
-    console.log("Error adding task:", error);
+    console.log(error);
     throw error;
   }
 };
@@ -51,12 +59,14 @@ export const editTodoItem = async (
     });
 
     if (!response.ok) {
-      throw new Error("Error editing task");
+      const errorMessage = `Failed to edit item. Status: ${response.status}, ${response.statusText}`;
+      console.error(errorMessage);
+      throw new Error(errorMessage);
     }
 
     return await response.json();
   } catch (error) {
-    console.log("Error editing task:", error);
+    console.log(error);
 
     throw error;
   }
