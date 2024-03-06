@@ -55,3 +55,19 @@ FRONT END E.H.
 BACK END E.H.
 - need to implement a global exception handler
 - figure out how to validate the Boolean Column Completed
+
+**LOG**
+**6/4/24**
+- going to use the basic logging that comes with spring-boot-starter-parent. I think I'll just need to describe what the functions are doing
+
+ACHIEVED:
+- refined error descriptions in my crud-logic.ts file and how they're handled in the container component
+- reviewed error handling in Spring. In future, I would like to use Global Exception Handling and subsequent error classes. However, for the scope of this project - I am happy with the handling currently implemented
+- Implemented Swagger functionality on the backend. Learned that Springfox is outdated and incompatible for the vesion of Springboot that I'm using. Classmate suggested using "springdoc-openapi-starter-webmvc-ui" instead and it worked great
+- Implemented a logging strategy on the back-end whereby I log the different steps involved in API request/responses. I used the default logging that didn't require any new dependencies (I think it came from 'spring-boot-starter-parent')
+- Researched Vitest and React Test Library
+
+**TOMORROW**
+- Implement React testing to all components used - research Vitest further
+- Make the strikethrough functionality functional
+- Front-end finish styling
