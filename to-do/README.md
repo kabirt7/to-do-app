@@ -71,3 +71,20 @@ ACHIEVED:
 - Implement React testing to all components used - research Vitest further
 - Make the strikethrough functionality functional
 - Front-end finish styling
+
+**LOG**
+**7/4/24**
+- Testing API mock calls was a bit challenging and time-consuming
+- act and waitFor were very important to my implementations
+
+ACHIEVED:
+- Added testing to my logic and react components - testing for ts was different to tsx. Used React Test Lib, Vitest & Jest
+- Added Strikethrough functionality to the To Do Item component
+- Added Strikethrough function to Controller and Service Layers of backend
+
+**TOMORROW**
+- Add in Context
+- Add Toast Notifcation component and use context to call this
+- Add in Zod error handling to RHF
+- Styling finishing touches
+
