@@ -1,12 +1,5 @@
-import {
-  ButtonHTMLAttributes,
-  DetailedHTMLProps,
-  Dispatch,
-  MouseEventHandler,
-  SetStateAction,
-} from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import styles from "./Button.module.scss";
-import { SubmitHandler, FieldValues } from "react-hook-form";
 
 interface ButtonProps
   extends Omit<

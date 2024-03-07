@@ -18,13 +18,17 @@ const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
     <form
       className={styles.modal__wrap}
       onSubmit={handleSubmit(submitFunction)}
+      data-testid="crud-modal"
     >
       <article className={styles.modal__article}>
         <Controller
           name="inputField"
           control={control}
           defaultValue=""
-          render={({ field }) => <textarea {...field} />}
+          render={({ field }) => (
+            <textarea data-testid="inputField" {...field} minLength={50} />
+          )}
+          rules={{ maxLength: 50 }}
         />
       </article>
 

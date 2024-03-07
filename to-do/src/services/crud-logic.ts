@@ -71,6 +71,29 @@ export const editTodoItem = async (
   }
 };
 
+export const toggleItemCompletion = async (id: number) => {
+  try {
+    const response = await fetch(`${API_URL}/${id}/toggle`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      const errorMessage = `Failed to toggle item ${id} completion. Status: ${response.status}, ${response.statusText}`;
+      console.error(errorMessage);
+      throw new Error(errorMessage);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
 export const deleteTodoItem = async (id: number) => {
   try {
     const response = await fetch(`${API_URL}/${id}`, {

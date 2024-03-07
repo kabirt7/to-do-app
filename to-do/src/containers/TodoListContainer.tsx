@@ -32,7 +32,9 @@ const TodoListContainer = () => {
   };
 
   const openEditModal = () => {
-    setOpenModal("edit");
+    if (selectedOption != -1) {
+      setOpenModal("edit");
+    }
   };
 
   const closeModal: MouseEventHandler<HTMLButtonElement> = () => {
@@ -97,11 +99,11 @@ const TodoListContainer = () => {
   }, []);
 
   const modalOpenThenBlurBg = {
-    filter: openModal != "none" && selectedOption != -1 ? "blur(4px)" : "none",
+    filter: openModal != "none" ? "blur(4px)" : "none",
   };
 
   return (
-    <main>
+    <main data-testid="todo-list-container">
       <div className={styles.container} style={modalOpenThenBlurBg}>
         <section className={styles.container__upperButtons}>
           <Button shape="rectangle" clickFunction={openAddModal}>
@@ -119,7 +121,10 @@ const TodoListContainer = () => {
                 name={"options"}
                 content={item.content}
                 value={item.id}
+                optionId={item.id}
                 handleCheckboxChange={handleCheckboxChange}
+                completed={item.completed}
+                getAllItems={getAllItems}
               />
             ))}
         </section>
