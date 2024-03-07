@@ -85,6 +85,7 @@ ACHIEVED:
 **TOMORROW**
 - Add in Context
 - Add Toast Notifcation component and use context to call this
+- Use Context to blur out background when modal is open
 - Add in Zod error handling to RHF
 - Styling finishing touches
 
