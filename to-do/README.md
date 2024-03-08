@@ -89,8 +89,9 @@ ACHIEVED:
 - Add in Zod error handling to RHF
 - Styling finishing touches
 
-- **LOG**
+**LOG**
 **8/4/24**
+
 ACHIEVED:
 - Added in Context
 - Added Toast Notifications
