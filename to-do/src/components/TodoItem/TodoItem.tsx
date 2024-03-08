@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   getAllTodoItems,
   toggleItemCompletion,
@@ -23,8 +24,6 @@ const TodoItem = ({
   completed,
   getAllItems,
 }: TodoItemProps) => {
-  //onclick p sends out the function that ! completed
-
   const handleToggleCompletion = async () => {
     try {
       const toggledItem = await toggleItemCompletion(optionId);

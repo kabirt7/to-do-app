@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useState } from "react";
+import { MouseEventHandler, useContext, useEffect, useState } from "react";
 import Button from "../components/Button/Button";
 import TodoItem from "../components/TodoItem/TodoItem";
 import styles from "./TodoListContainer.module.scss";
@@ -10,12 +10,21 @@ import {
 } from "../services/crud-logic";
 import { TodoItemInterface } from "../services/interfaces";
 import CrudModal from "../components/CrudModal/CrudModal";
+import { TodoContext } from "../context/TodoContextProvider";
 
-const TodoListContainer = () => {
+interface TodoListContainerProps {
+  openModal: string;
+  setOpenModal: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const TodoListContainer = ({
+  openModal,
+  setOpenModal,
+}: TodoListContainerProps) => {
   // eventually add toast notifications for adding, deleting etc
   const [todoItems, setTodoItems] = useState<TodoItemInterface[] | null>(null);
   const [selectedOption, setSelectedOption] = useState<number>(-1);
-  const [openModal, setOpenModal] = useState("none");
+  const { setMessage } = useContext(TodoContext);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(event.target.value);
@@ -49,10 +58,11 @@ const TodoListContainer = () => {
         setOpenModal("none");
       }
       console.log("Added item:", addedItem);
-    } catch (error) {
+      setMessage("Added Item Successfully");
+    } catch (error: any) {
       console.log(error);
-
-      // add toast notification with the error
+      const errorMessage = error.message || "An error occurred";
+      setMessage(errorMessage);
     }
   };
 
@@ -64,10 +74,11 @@ const TodoListContainer = () => {
         setOpenModal("none");
       }
       console.log("Edited item:", editedItem);
-    } catch (error) {
+      setMessage("Edited Item Successfully");
+    } catch (error: any) {
       console.log(error);
-
-      // add toast notification with the error
+      const errorMessage = error.message || "An error occurred";
+      setMessage(errorMessage);
     }
   };
 
@@ -75,8 +86,11 @@ const TodoListContainer = () => {
     try {
       await deleteTodoItem(selectedOption);
       await getAllItems();
-    } catch (error) {
+      setMessage("Deleted Item Successfully");
+    } catch (error: any) {
       console.log(error);
+      const errorMessage = error.message || "An error occurred";
+      setMessage(errorMessage);
 
       // add toast notification with the error
     }
@@ -109,9 +123,9 @@ const TodoListContainer = () => {
           <Button shape="rectangle" clickFunction={openAddModal}>
             ADD
           </Button>
-          <Button shape="rectangle" clickFunction={openAddModal}>
+          {/* <Button shape="rectangle" clickFunction={openAddModal}>
             SORT
-          </Button>
+          </Button> */}
         </section>
         <section className={styles.container__main}>
           {todoItems &&

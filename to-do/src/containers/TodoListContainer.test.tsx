@@ -14,6 +14,7 @@ import {
   getAllTodoItems,
 } from "../services/crud-logic";
 import { vi } from "vitest";
+import { useState } from "react";
 
 vi.mock("../services/crud-logic", () => ({
   getAllTodoItems: vi.fn(),
@@ -21,6 +22,12 @@ vi.mock("../services/crud-logic", () => ({
   editTodoItem: vi.fn(),
   deleteTodoItem: vi.fn(),
 }));
+
+const TodoListContainerWrapper = () => {
+  const [state, setState] = useState("none");
+
+  return <TodoListContainer openModal={state} setOpenModal={setState} />;
+};
 
 describe("TodoListContainer", () => {
   const mockGetAllTodoItems = getAllTodoItems as jest.MockedFunction<
@@ -35,7 +42,7 @@ describe("TodoListContainer", () => {
   });
 
   test("fetches and renders all todo items on initial load", async () => {
-    render(<TodoListContainer />);
+    render(<TodoListContainerWrapper />);
 
     await waitFor(() => {
       expect(mockGetAllTodoItems).toHaveBeenCalledTimes(1);
@@ -46,7 +53,7 @@ describe("TodoListContainer", () => {
   });
 
   test("opens add modal and adds correct item", async () => {
-    render(<TodoListContainer />);
+    render(<TodoListContainerWrapper />);
     await act(async () => {
       userEvent.click(screen.getByText("ADD"));
     });
@@ -70,7 +77,7 @@ describe("TodoListContainer", () => {
   });
 
   test("opens edit modal and edits an existing item", async () => {
-    render(<TodoListContainer />);
+    render(<TodoListContainerWrapper />);
 
     // Check the checkbox
     await waitFor(() => {
@@ -94,7 +101,7 @@ describe("TodoListContainer", () => {
   });
 
   test("deletes a selected item", async () => {
-    render(<TodoListContainer />);
+    render(<TodoListContainerWrapper />);
 
     await waitFor(() => {
       fireEvent.click(screen.getByTestId("2"));

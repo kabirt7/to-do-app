@@ -6,7 +6,7 @@ export const getAllTodoItems = async (): Promise<TodoItemInterface[]> => {
   try {
     const response = await fetch(API_URL);
     if (!response.ok) {
-      const errorMessage = `Failed to get posts. Status: ${response.status}, ${response.statusText}`;
+      const errorMessage = `Failed to get posts. Status: ${response.status} ${response.statusText}`;
       console.error(errorMessage);
       throw new Error(errorMessage);
     }
@@ -30,7 +30,7 @@ export const addTodoItem = async (text: string): Promise<TodoItemInterface> => {
     });
 
     if (!response.ok) {
-      const errorMessage = `Failed to add item. Status: ${response.status}, ${response.statusText}`;
+      const errorMessage = `Failed to add item. Status: ${response.status} ${response.statusText}`;
       console.error(errorMessage);
       throw new Error(errorMessage);
     }
@@ -59,7 +59,7 @@ export const editTodoItem = async (
     });
 
     if (!response.ok) {
-      const errorMessage = `Failed to edit item. Status: ${response.status}, ${response.statusText}`;
+      const errorMessage = `Failed to edit item. Status: ${response.status} ${response.statusText}`;
       console.error(errorMessage);
       throw new Error(errorMessage);
     }
@@ -81,7 +81,7 @@ export const toggleItemCompletion = async (id: number) => {
     });
 
     if (!response.ok) {
-      const errorMessage = `Failed to toggle item ${id} completion. Status: ${response.status}, ${response.statusText}`;
+      const errorMessage = `Failed to toggle item ${id} completion. Status: ${response.status} ${response.statusText}`;
       console.error(errorMessage);
       throw new Error(errorMessage);
     }
@@ -100,7 +100,7 @@ export const deleteTodoItem = async (id: number) => {
       method: "DELETE",
     });
     if (!response.ok) {
-      const errorMessage = `Failed to delete item. Status: ${response.status}, ${response.statusText}`;
+      const errorMessage = `Failed to delete item. Status: ${response.status} ${response.statusText}`;
       console.error(errorMessage);
       throw new Error(errorMessage);
     }

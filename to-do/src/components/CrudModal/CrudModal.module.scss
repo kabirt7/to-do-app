@@ -10,13 +10,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 3vh;
   }
 
   &__article {
     background-color: white;
     z-index: 1;
     width: 50vh;
-    height: 50vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,5 +29,12 @@
       resize: none;
       outline: none;
     }
+  }
+
+  &__buttonWrap {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 3vh;
   }
 }

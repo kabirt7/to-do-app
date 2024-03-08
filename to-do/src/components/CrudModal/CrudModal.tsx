@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import styles from "./CrudModal.module.scss";
 import {
   Controller,
@@ -5,6 +6,9 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
+import { TodoContext } from "../../context/TodoContextProvider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 interface CrudModalProps {
   submitFunction: SubmitHandler<FieldValues>;
@@ -13,11 +17,27 @@ interface CrudModalProps {
 
 const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
   const { handleSubmit, control } = useForm();
+  const { setMessage } = useContext(TodoContext);
+
+  const onSubmit = async (data: FieldValues) => {
+    const inputValue = data.inputField as string;
+
+    try {
+      if (inputValue.length > 50) {
+        throw new Error("input must be less than 50 characters");
+      }
+      await submitFunction(data);
+    } catch (error: any) {
+      console.error("Form submission error:", error);
+      const errorMessage = error.message || "An error occurred";
+      setMessage(errorMessage);
+    }
+  };
 
   return (
     <form
       className={styles.modal__wrap}
-      onSubmit={handleSubmit(submitFunction)}
+      onSubmit={handleSubmit(onSubmit)}
       data-testid="crud-modal"
     >
       <article className={styles.modal__article}>
@@ -26,16 +46,17 @@ const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
           control={control}
           defaultValue=""
           render={({ field }) => (
-            <textarea data-testid="inputField" {...field} minLength={50} />
+            <textarea data-testid="inputField" {...field} />
           )}
-          rules={{ maxLength: 50 }}
         />
       </article>
 
       <footer className={styles.modal__buttonWrap}>
-        <button type="submit">Yes</button>
+        <button type="submit">
+          <FontAwesomeIcon icon={faCheck} />
+        </button>
         <button type="button" onClick={closeModal}>
-          No
+          <FontAwesomeIcon icon={faXmark} />
         </button>
       </footer>
     </form>
