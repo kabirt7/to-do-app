@@ -1,12 +1,9 @@
 # TO DO
-
 **FUTURE**
-- Toast notifications 
-- Finish front end
-- Error handling in spring
-- Swagger on spring 
-- React testing 
-- Styling 
+- Finish front end Styling
+- Custom Error handling in Spring 
+- Update React testing 
+- Complete Readme
 
 **LOG**
 **4/4/24**
