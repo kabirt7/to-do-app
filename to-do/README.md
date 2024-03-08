@@ -83,9 +83,18 @@ ACHIEVED:
 - Added Strikethrough function to Controller and Service Layers of backend
 
 **TOMORROW**
-- Add in Context
+- Add in Context 
 - Add Toast Notifcation component and use context to call this
-- Use Context to blur out background when modal is open
+- Use Context to blur out background when modal is open 
 - Add in Zod error handling to RHF
 - Styling finishing touches
+
+- **LOG**
+**8/4/24**
+ACHIEVED:
+- Added in Context
+- Added Toast Notifications
+- Decided not to use Zod for now as the way it TSX and the Controller Component interact is complex
+- some styling changes
+  
 
