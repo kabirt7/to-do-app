@@ -43,7 +43,7 @@ test('calls closeModal when "No" button is clicked', async () => {
   render(<CrudModal submitFunction={() => {}} closeModal={mockCloseModal} />);
 
   await act(async () => {
-    const noButton = screen.getByText("No");
+    const noButton = screen.getByTestId("No");
     fireEvent.click(noButton);
   });
 
