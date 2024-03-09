@@ -43,6 +43,8 @@ const TodoListContainer = ({
   const openEditModal = () => {
     if (selectedOption != -1) {
       setOpenModal("edit");
+    } else {
+      setMessage("Please Select Item");
     }
   };
 
@@ -83,16 +85,19 @@ const TodoListContainer = ({
   };
 
   const deleteItem = async () => {
-    try {
-      await deleteTodoItem(selectedOption);
-      await getAllItems();
-      setMessage("Deleted Item Successfully");
-    } catch (error: any) {
-      console.log(error);
-      const errorMessage = error.message || "An error occurred";
-      setMessage(errorMessage);
-
-      // add toast notification with the error
+    if (selectedOption === -1) {
+      setMessage("Please Select Item");
+      return;
+    } else {
+      try {
+        await deleteTodoItem(selectedOption);
+        await getAllItems();
+        setMessage("Deleted Item Successfully");
+      } catch (error: any) {
+        console.log(error);
+        const errorMessage = error.message || "An error occurred";
+        setMessage(errorMessage);
+      }
     }
   };
 

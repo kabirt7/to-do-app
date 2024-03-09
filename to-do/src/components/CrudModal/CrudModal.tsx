@@ -52,10 +52,10 @@ const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
       </article>
 
       <footer className={styles.modal__buttonWrap}>
-        <button type="submit">
+        <button type="submit" data-testid="Yes">
           <FontAwesomeIcon icon={faCheck} />
         </button>
-        <button type="button" onClick={closeModal}>
+        <button type="button" onClick={closeModal} data-testid="No">
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </footer>

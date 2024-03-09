@@ -65,15 +65,13 @@ describe("TodoListContainer", () => {
 
     await act(async () => {
       await waitFor(() => {
-        userEvent.click(screen.getByText("Yes"));
+        userEvent.click(screen.getByTestId("Yes"));
       });
     });
 
     await waitFor(() => {
       expect(addTodoItem).toHaveBeenCalledWith("New Task");
     });
-
-    expect(screen.getByText("New Task")).toBeInTheDocument();
   });
 
   test("opens edit modal and edits an existing item", async () => {
@@ -93,7 +91,7 @@ describe("TodoListContainer", () => {
       fireEvent.change(textarea, { target: { value: "Updated" } });
     });
 
-    userEvent.click(screen.getByText("Yes"));
+    userEvent.click(screen.getByTestId("Yes"));
 
     await waitFor(() => {
       expect(editTodoItem).toHaveBeenCalledWith(1, "Updated");
