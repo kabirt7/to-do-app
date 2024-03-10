@@ -2,6 +2,16 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  padding-left: 2vh;
   gap: 1vh;
+  background-color: white;
+  border-radius: 4px;
+  padding-left: 10px;
+
+  input[type="radio"] {
+    accent-color: grey;
+  }
+
+  p {
+    cursor: pointer;
+  }
 }

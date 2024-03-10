@@ -1,7 +1,7 @@
 export interface TodoItemInterface {
   id: number;
-  title: string;
   content: string;
-  createdAt: String;
-  updatedAt: String;
+  completed: boolean;
+  createdAt?: String;
+  updatedAt?: String;
 }

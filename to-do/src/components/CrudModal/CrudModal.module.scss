@@ -1,0 +1,40 @@
+.modal {
+  &__wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+  }
+
+  &__article {
+    background-color: white;
+    z-index: 1;
+    width: 50vh;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    textarea {
+      height: 100%;
+      width: 100%;
+      border: 1px black solid;
+      resize: none;
+      outline: none;
+    }
+  }
+
+  &__buttonWrap {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 3vh;
+  }
+}
