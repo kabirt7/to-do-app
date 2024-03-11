@@ -1,12 +1,59 @@
 https://app.netlify.com/sites/frabjous-lily-c59a23/
 
-# TO DO
-**FUTURE**
-- Finish front end Styling
-- Custom Error handling in Spring 
-- Update React testing 
-- Complete Readme
+# TO-DO APP
 
+To-do App
+
+#￼# BACK-END LINK
+
+- https://github.com/kabirt7/to-do-app-frontend/edit/main/README.md
+
+## Hosting
+
+- Currently not live as I still need to configure the server hosting
+
+## Known Issues
+
+- Need to add in Toast Notifications for strikethrough
+- Back-end error handling needs to be improved
+- Stuck on one test for toast nofications
+
+## MVP
+
+- CRUD-enabled TSX app with Spring Boot backend 
+- Testing with React Test Library
+- All errors must be handled and passed on properly back to the user 
+- Polished
+- All endpoints must be error handled such that they return the correct status codes and messages.
+- Implement a logging strategy for requests being processed (there are loads of recourse you can find via google to do this)
+- Use spring swagger 
+
+## Design Goals 
+
+- Simple front-end using modals to add/edit Items
+- Back-end configured in Spring with model mapper validation
+
+## Features
+
+- Create and update items using modals
+- Fetches items from DB and displays them on window load
+- Delete item functionality
+- Toast notifications when items are added/edited/deleted or fails to do so
+- Create and Edit modals use React Hook Form and specifically the Controller component (from RHF) to update the state as the Items are typed out
+- Strikethrough functionality when Items are clicked
+- Swagger Documentation - <insert URL here>
+- Logging Strategy on back-end 
+- Service and Controller layer on back-end to handle and validate data
+- Entity and DTOs establishing title, completion status and when the item was added/last updated
+
+## Future Goals
+
+- Display the time of creation/update on the items (already generate this data on the backend
+
+## STRUGGLES
+
+- Testing was difficult
+  
 **LOG**
 **4/4/24**
 - today I tried to integrate the edit and add Modal into my project
