@@ -1,16 +1,15 @@
-https://app.netlify.com/sites/frabjous-lily-c59a23/
-
 # TO-DO APP
 
 To-do App
 
-#￼# BACK-END LINK
+# BACK-END LINK
 
 - https://github.com/kabirt7/to-do-app-frontend/edit/main/README.md
 
 ## Hosting
 
 - Currently not live as I still need to configure the server hosting
+- https://app.netlify.com/sites/frabjous-lily-c59a23/
 
 ## Known Issues
 
