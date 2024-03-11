@@ -2,7 +2,7 @@
 
 # BACK-END LINK
 
-- https://github.com/kabirt7/to-do-app-frontend/edit/main/README.md
+- https://github.com/kabirt7/to-do-app
 
 ## Hosting
 
