@@ -48,7 +48,9 @@
 
 ## Struggles
 
-- Testing was difficult
+- Ensure TypeScript was up to scratch along with how this effects making my components reusable was a challenge.
+- Testing components vs ts logic was quite different.
+- I still feel like I need to fully consolidate my tests by practicing the concept.
   
 **LOG**
 **4/4/24**
