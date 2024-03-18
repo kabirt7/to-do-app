@@ -53,7 +53,7 @@
 - I still feel like I need to fully consolidate my tests by practicing the concept.
   
 **LOG**
-**4/4/24**
+## 4/4/24
 - today I tried to integrate the edit and add Modal into my project
   
 - I encountered some issues:
@@ -71,8 +71,7 @@
 - Style these buttons
 - Integrate in delete functionality
 
-**LOG**
-**5/4/24**
+## 5/4/24
 - today went well, logging everything I had to do today last night was super helpful
 
 ACHIEVED:
@@ -100,8 +99,7 @@ BACK END E.H.
 - need to implement a global exception handler
 - figure out how to validate the Boolean Column Completed
 
-**LOG**
-**6/4/24**
+## 6/4/24
 - going to use the basic logging that comes with spring-boot-starter-parent. I think I'll just need to describe what the functions are doing
 
 ACHIEVED:
@@ -116,8 +114,7 @@ ACHIEVED:
 - Make the strikethrough functionality functional
 - Front-end finish styling
 
-**LOG**
-**7/4/24**
+## 7/4/24
 - Testing API mock calls was a bit challenging and time-consuming
 - act and waitFor were very important to my implementations
 
@@ -133,8 +130,7 @@ ACHIEVED:
 - Add in Zod error handling to RHF
 - Styling finishing touches
 
-**LOG**
-**8/4/24**
+## 8/4/24
 
 ACHIEVED:
 - Added in Context
@@ -142,8 +138,7 @@ ACHIEVED:
 - Decided not to use Zod for now as the way it TSX and the Controller Component interact is complex
 - some styling changes
   
-**LOG**
-**9/4/24**
+## 9/4/24
 ACHIEVED: 
 - Added testing for Toast Component
 
@@ -162,8 +157,7 @@ BACK END E.H.
 - need to implement a global exception handler
 - figure out how to validate the Boolean Column Completed
 
-**LOG**
-**6/4/24**
+## 6/4/24
 - going to use the basic logging that comes with spring-boot-starter-parent. I think I'll just need to describe what the functions are doing
 
 ACHIEVED:
@@ -178,8 +172,7 @@ ACHIEVED:
 - Make the strikethrough functionality functional
 - Front-end finish styling
 
-**LOG**
-**7/4/24**
+## 7/4/24
 - Testing API mock calls was a bit challenging and time-consuming
 - act and waitFor were very important to my implementations
 
@@ -195,8 +188,7 @@ ACHIEVED:
 - Add in Zod error handling to RHF
 - Styling finishing touches
 
-**LOG**
-**8/4/24**
+## 8/4/24
 
 ACHIEVED:
 - Added in Context
