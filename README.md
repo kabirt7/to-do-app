@@ -1,12 +1,10 @@
 # TO-DO APP
 
-## BACK-END LINK
-
-- https://github.com/kabirt7/to-do-app
-
 ## Hosting
 
 - Currently not live as I still need to configure the server hosting
+
+## Set-up
 
 ## Known Issues
 
