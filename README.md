@@ -52,7 +52,7 @@
 - Testing components vs ts logic was quite different.
 - I still feel like I need to fully consolidate my tests by practicing the concept.
   
-**LOG**
+## LOG
 ## 4/4/24
 - today I tried to integrate the edit and add Modal into my project
   
