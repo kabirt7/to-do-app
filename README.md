@@ -40,7 +40,7 @@
 - Toast notifications when items are added/edited/deleted or fails to do so
 - Create and Edit modals use React Hook Form and specifically the Controller component (from RHF) to update the state as the Items are typed out
 - Strikethrough functionality when Items are clicked
-- Swagger Documentation - <insert URL here>
+- Swagger Documentation
 - Logging Strategy on back-end 
 - Service and Controller layer on back-end to handle and validate data
 - Entity and DTOs establishing title, completion status and when the item was added/last updated
