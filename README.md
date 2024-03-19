@@ -2,7 +2,7 @@
 
 ## DEMO
 
-- ![Alt Text](demo.gif)
+![demo of project](demo.gif)
 
 
 ## Hosting
