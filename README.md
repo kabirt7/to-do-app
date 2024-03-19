@@ -6,7 +6,9 @@
 
 ## Set-up
 
-- 
+- Back-end API port: 8080
+- Database port: 3306
+- Front-end port: 5173
 
 ## Known Issues
 
