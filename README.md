@@ -1,8 +1,9 @@
 # TO-DO APP
 
-## BACK-END LINK
+## DEMO
 
-- https://github.com/kabirt7/to-do-app
+- ![Alt Text](demo.gif)
+
 
 ## Hosting
 
