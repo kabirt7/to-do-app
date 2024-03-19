@@ -9,6 +9,7 @@
 - Back-end API port: 8080
 - Database port: 3306
 - Front-end port: 5173
+- API Swagger documentation - http://localhost:8080/swagger-ui/index.html#/
 
 ## Known Issues
 
