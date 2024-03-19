@@ -1,8 +1,11 @@
 .container {
   width: 50vw;
   height: auto;
-  max-height: 60%;
   margin-bottom: 15vh;
+
+  @media only screen and (max-width: 600px) {
+    width: 90vw;
+  }
 
   &__upperButtons {
     display: flex;

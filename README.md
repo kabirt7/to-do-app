@@ -1,8 +1,8 @@
 # TO-DO APP
 
-## Hosting
+## DEMO
 
-- Currently not live as I still need to configure the server hosting
+![demo of project](demo.gif)
 
 ## Set-up
 

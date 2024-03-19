@@ -1,37 +1,36 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styles from "./CrudModal.module.scss";
-import {
-  Controller,
-  FieldValues,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
-import { TodoContext } from "../../context/TodoContextProvider";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { TodoContext } from "../../context/TodoContextProvider";
 
 interface CrudModalProps {
-  submitFunction: SubmitHandler<FieldValues>;
+  submitFunction: SubmitHandler<{ inputField: string }>;
   closeModal: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
-  const { handleSubmit, control } = useForm();
+  const { handleSubmit } = useForm<{ inputField: string }>();
   const { setMessage } = useContext(TodoContext);
 
-  const onSubmit = async (data: FieldValues) => {
-    const inputValue = data.inputField as string;
+  const [inputValue, setInputValue] = useState("");
 
+  const onSubmit = async () => {
     try {
       if (inputValue.length > 50) {
-        throw new Error("input must be less than 50 characters");
+        throw new Error("Input must be less than 50 characters");
       }
-      await submitFunction(data);
+      await submitFunction({ inputField: inputValue });
     } catch (error: any) {
       console.error("Form submission error:", error);
       const errorMessage = error.message || "An error occurred";
       setMessage(errorMessage);
     }
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInputValue(event.target.value);
   };
 
   return (
@@ -41,13 +40,10 @@ const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
       data-testid="crud-modal"
     >
       <article className={styles.modal__article}>
-        <Controller
-          name="inputField"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <textarea data-testid="inputField" {...field} />
-          )}
+        <textarea
+          data-testid="inputField"
+          value={inputValue}
+          onChange={handleChange}
         />
       </article>
 
@@ -56,7 +52,7 @@ const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
           <FontAwesomeIcon icon={faCheck} />
         </button>
         <button type="button" onClick={closeModal} data-testid="No">
-          <FontAwesomeIcon icon={faXmark} />
+          <FontAwesomeIcon icon={faTimes} />
         </button>
       </footer>
     </form>
