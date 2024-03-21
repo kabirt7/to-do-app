@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import styles from "./CrudModal.module.scss";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,26 +11,20 @@ interface CrudModalProps {
 }
 
 const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
-  const { handleSubmit } = useForm<{ inputField: string }>();
+  const { handleSubmit, register } = useForm<{ inputField: string }>();
   const { setMessage } = useContext(TodoContext);
 
-  const [inputValue, setInputValue] = useState("");
-
-  const onSubmit = async () => {
+  const onSubmit = async (data: { inputField: string }) => {
     try {
-      if (inputValue.length > 50) {
+      if (data.inputField.length > 50) {
         throw new Error("Input must be less than 50 characters");
       }
-      await submitFunction({ inputField: inputValue });
+      await submitFunction(data);
     } catch (error: any) {
       console.error("Form submission error:", error);
       const errorMessage = error.message || "An error occurred";
       setMessage(errorMessage);
     }
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInputValue(event.target.value);
   };
 
   return (
@@ -40,11 +34,7 @@ const CrudModal = ({ submitFunction, closeModal }: CrudModalProps) => {
       data-testid="crud-modal"
     >
       <article className={styles.modal__article}>
-        <textarea
-          data-testid="inputField"
-          value={inputValue}
-          onChange={handleChange}
-        />
+        <textarea data-testid="inputField" {...register("inputField")} />
       </article>
 
       <footer className={styles.modal__buttonWrap}>
