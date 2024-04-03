@@ -57,7 +57,7 @@
 - I still feel like I need to fully consolidate my tests by practicing the concept.
 - I had an unclear understanding of how RHF works. Even though I've used it before, I had forgotten that it handles state internally. The confusion came form thinking only useRef allowed the updated info to be added by default. UseRef will take the input value from the DOM at the time of submitting whereas RHF will internally update the state as the input changes.
   
-## LOG
+## CHANGE LOGS
 ## 4/4/24
 - today I tried to integrate the edit and add Modal into my project
   
