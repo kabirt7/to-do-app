@@ -12,12 +12,6 @@
 - Table name: to_dos
 - API Swagger documentation - http://localhost:8080/swagger-ui/index.html#/
 
-## Known Issues
-
-- Need to add in Toast Notifications for strikethrough
-- Back-end error handling needs to be improved
-- Stuck on one test for toast nofications
-
 ## MVP
 
 - CRUD-enabled TSX app with Spring Boot backend 
@@ -45,6 +39,12 @@
 - Logging Strategy on back-end 
 - Service and Controller layer on back-end to handle and validate data
 - Entity and DTOs establishing title, completion status and when the item was added/last updated
+
+## Known Issues
+
+- Need to add in Toast Notifications for strikethrough
+- Back-end error handling needs to be improved
+- Stuck on one test for toast nofications
 
 ## Future Goals
 
