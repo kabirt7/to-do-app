@@ -1,3 +1,3 @@
 [config]
 SCM_DO_BUILD_DURING_DEPLOYMENT = false
-PROJECT = /to_do.backend/pom.xml
+PROJECT = /to-do-app/to_do.backend
