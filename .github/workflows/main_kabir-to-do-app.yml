@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'kabir-to-do-app'
           slot-name: 'Production'
-          package: 'target/*.jar'
+          package: 'to_do.backend/target/*.jar'
           
