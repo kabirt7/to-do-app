@@ -22,7 +22,10 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn -f to_do.backend clean install
+        run:  |
+              mvn -f to_do.backend clean install
+              echo "=== Contents of target directory ==="
+              ls -al ${GITHUB_WORKSPACE}/to_do.backend/target
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
