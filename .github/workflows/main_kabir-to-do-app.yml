@@ -62,6 +62,6 @@ jobs:
         with:
           app-name: 'kabir-to-do-app'
           slot-name: 'Production'
-          package: '${GITHUB_WORKSPACE}/to_do.backend/target/to_do.backend-0.0.1-SNAPSHOT.jar'
+          package: '/home/runner/work/to-do-app/to-do-app/to_do.backend/target/to_do.backend-0.0.1-SNAPSHOT.jar'
 
           
