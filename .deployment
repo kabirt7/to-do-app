@@ -1,3 +1,2 @@
 [config]
-SCM_DO_BUILD_DURING_DEPLOYMENT = false
 PROJECT = /to-do-app/todo.backend/pom.xml
