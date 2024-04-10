@@ -40,6 +40,9 @@ jobs:
       id-token: write #This is required for requesting the JWT
   
     steps:
+      - name: List contents of target directory
+        run: ls -al '${{ github.workspace }}/target'
+    
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
@@ -58,5 +61,5 @@ jobs:
         with:
           app-name: 'kabir-to-do-app'
           slot-name: 'Production'
-          package: '*.jar'
+          package: 'target/*.jar'
           
