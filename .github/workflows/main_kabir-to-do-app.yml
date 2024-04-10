@@ -53,11 +53,6 @@ jobs:
         run: |
              echo "=== Contents of target directory ==="
              ls -al /home/runner/work/to-do-app/to-do-app
-
-      - name: Find JAR files in target directory
-        run: |
-             echo "Searching for JAR files in target directory:"
-             ls -al /home/runner/work/to-do-app/to-do-app/to_do.backend/target 
       
       - name: Login to Azure
         uses: azure/login@v1
