@@ -12,9 +12,13 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "to_dos")
+@AllArgsConstructor
+@NoArgsConstructor
 public class ToDoItem {
 	
 	@Id
@@ -24,7 +28,7 @@ public class ToDoItem {
 	@Column
 	private Boolean completed;
 	
-	@Column(columnDefinition = "LONGTEXT")
+	@Column(columnDefinition = "NVARCHAR(MAX)")
 	private String content;
 	
 	@Temporal(TemporalType.TIMESTAMP)

@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://employee-creator-db.database.windows.net:1433;database=employee-creator-DB;user=kabirt7@employee-creator-db;password=7VBYjueppbyN2dR;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: kabirt7
+    password: 7VBYjueppbyN2dR
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+
+server:
+  port: 9191
