@@ -15,7 +15,7 @@
 ## Hosted Link
 
 - AzureSQL database with Azure Server on the backend
-- Hosted on Netlify on the frontend
+- Hosted by Netlify on the frontend
 - The server plan I'm using isn't very flash so the app runs quite slowly
 - https://benevolent-narwhal-c09433.netlify.app/
 
