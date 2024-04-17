@@ -12,6 +12,15 @@
 - Table name: to_dos
 - API Swagger documentation - http://localhost:8080/swagger-ui/index.html#/
 
+## Hosted Link
+
+- AzureSQL database with Azure Server on the backend
+- Hosted on Netlify on the frontend
+- The server plan I'm using isn't very flash so the app runs quite slowly
+- https://benevolent-narwhal-c09433.netlify.app/
+
+- This is my first ever time full-stack hosting a site. Going forward I am going to look into Docker and Containers.
+
 ## MVP
 
 - CRUD-enabled TSX app with Spring Boot backend 
