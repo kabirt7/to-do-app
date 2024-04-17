@@ -1,8 +1,4 @@
-import { useState } from "react";
-import {
-  getAllTodoItems,
-  toggleItemCompletion,
-} from "../../services/crud-logic";
+import { toggleItemCompletion } from "../../services/crud-logic";
 import styles from "./TodoItem.module.scss";
 
 interface TodoItemProps {
