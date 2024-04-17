@@ -1,18 +1,16 @@
 # TO-DO APP
 
-## BACK-END LINK
+## DEMO
 
-- https://github.com/kabirt7/to-do-app
+![demo of project](demo.gif)
 
-## Hosting
+## Set-up
 
-- Currently not live as I still need to configure the server hosting
-
-## Known Issues
-
-- Need to add in Toast Notifications for strikethrough
-- Back-end error handling needs to be improved
-- Stuck on one test for toast nofications
+- Back-end API port: 8080
+- Front-end port: 5173
+- Database:  port 3306/to_dos
+- Table name: to_dos
+- API Swagger documentation - http://localhost:8080/swagger-ui/index.html#/
 
 ## MVP
 
@@ -37,10 +35,16 @@
 - Toast notifications when items are added/edited/deleted or fails to do so
 - Create and Edit modals use React Hook Form and specifically the Controller component (from RHF) to update the state as the Items are typed out
 - Strikethrough functionality when Items are clicked
-- Swagger Documentation - <insert URL here>
+- Swagger Documentation
 - Logging Strategy on back-end 
 - Service and Controller layer on back-end to handle and validate data
 - Entity and DTOs establishing title, completion status and when the item was added/last updated
+
+## Known Issues
+
+- Need to add in Toast Notifications for strikethrough
+- Back-end error handling needs to be improved
+- Stuck on one test for toast nofications
 
 ## Future Goals
 
@@ -48,10 +52,13 @@
 
 ## Struggles
 
-- Testing was difficult
+- Ensure TypeScript was up to scratch along with how this effects making my components reusable was a challenge.
+- Testing components vs ts logic was quite different.
+- I still feel like I need to fully consolidate my tests by practicing the concept.
+- I had an unclear understanding of how RHF works. Even though I've used it before, I had forgotten that it handles state internally. The confusion came form thinking only useRef allowed the updated info to be added by default. UseRef will take the input value from the DOM at the time of submitting whereas RHF will internally update the state as the input changes.
   
-**LOG**
-**4/4/24**
+## CHANGE LOGS
+## 4/4/24
 - today I tried to integrate the edit and add Modal into my project
   
 - I encountered some issues:
@@ -69,8 +76,7 @@
 - Style these buttons
 - Integrate in delete functionality
 
-**LOG**
-**5/4/24**
+## 5/4/24
 - today went well, logging everything I had to do today last night was super helpful
 
 ACHIEVED:
@@ -98,8 +104,7 @@ BACK END E.H.
 - need to implement a global exception handler
 - figure out how to validate the Boolean Column Completed
 
-**LOG**
-**6/4/24**
+## 6/4/24
 - going to use the basic logging that comes with spring-boot-starter-parent. I think I'll just need to describe what the functions are doing
 
 ACHIEVED:
@@ -114,8 +119,7 @@ ACHIEVED:
 - Make the strikethrough functionality functional
 - Front-end finish styling
 
-**LOG**
-**7/4/24**
+## 7/4/24
 - Testing API mock calls was a bit challenging and time-consuming
 - act and waitFor were very important to my implementations
 
@@ -131,8 +135,7 @@ ACHIEVED:
 - Add in Zod error handling to RHF
 - Styling finishing touches
 
-**LOG**
-**8/4/24**
+## 8/4/24
 
 ACHIEVED:
 - Added in Context
@@ -140,64 +143,10 @@ ACHIEVED:
 - Decided not to use Zod for now as the way it TSX and the Controller Component interact is complex
 - some styling changes
   
-**LOG**
-**9/4/24**
+## 9/4/24
 ACHIEVED: 
 - Added testing for Toast Component
 
-ISSUES:
-- struggling to get time-out test to work for TC
-=======
-
-- add strikethrough functionality to the front-end
-
-FRONT END E.H.
-- my logic.ts file throws errors with very little detail, this can be easily updated. The same needs to be done for the container functions that fire them
-- validation for if the message is too long. This will be on backend too but I think I remember Alex saying to do this on front-end too
-- research logging strategy
-
-BACK END E.H.
-- need to implement a global exception handler
-- figure out how to validate the Boolean Column Completed
-
-**LOG**
-**6/4/24**
-- going to use the basic logging that comes with spring-boot-starter-parent. I think I'll just need to describe what the functions are doing
-
-ACHIEVED:
-- refined error descriptions in my crud-logic.ts file and how they're handled in the container component
-- reviewed error handling in Spring. In future, I would like to use Global Exception Handling and subsequent error classes. However, for the scope of this project - I am happy with the handling currently implemented
-- Implemented Swagger functionality on the backend. Learned that Springfox is outdated and incompatible for the vesion of Springboot that I'm using. Classmate suggested using "springdoc-openapi-starter-webmvc-ui" instead and it worked great
-- Implemented a logging strategy on the back-end whereby I log the different steps involved in API request/responses. I used the default logging that didn't require any new dependencies (I think it came from 'spring-boot-starter-parent')
-- Researched Vitest and React Test Library
-
-**TOMORROW**
-- Implement React testing to all components used - research Vitest further
-- Make the strikethrough functionality functional
-- Front-end finish styling
-
-**LOG**
-**7/4/24**
-- Testing API mock calls was a bit challenging and time-consuming
-- act and waitFor were very important to my implementations
-
-ACHIEVED:
-- Added testing to my logic and react components - testing for ts was different to tsx. Used React Test Lib, Vitest & Jest
-- Added Strikethrough functionality to the To Do Item component
-- Added Strikethrough function to Controller and Service Layers of backend
-
-**TOMORROW**
-- Add in Context 
-- Add Toast Notifcation component and use context to call this
-- Use Context to blur out background when modal is open 
-- Add in Zod error handling to RHF
-- Styling finishing touches
-
-**LOG**
-**8/4/24**
-
-ACHIEVED:
-- Added in Context
-- Added Toast Notifications
-- Decided not to use Zod for now as the way it TSX and the Controller Component interact is complex
-- some styling changes
+TO-DO:
+- struggling to get time-out test to work for Toast Component
+- add strikethrough functionality to T.C.
