@@ -21,7 +21,6 @@ const TodoListContainer = ({
   openModal,
   setOpenModal,
 }: TodoListContainerProps) => {
-  // eventually add toast notifications for adding, deleting etc
   const [todoItems, setTodoItems] = useState<TodoItemInterface[] | null>(null);
   const [selectedOption, setSelectedOption] = useState<number>(-1);
   const { setMessage } = useContext(TodoContext);

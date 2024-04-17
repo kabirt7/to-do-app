@@ -28,7 +28,6 @@ export const addTodoItem = async (text: string): Promise<TodoItemInterface> => {
       },
       body: JSON.stringify({ completed: false, content: text }),
     });
-
     if (!response.ok) {
       const errorMessage = `Failed to add item. Status: ${response.status} ${response.statusText}`;
       console.error(errorMessage);
