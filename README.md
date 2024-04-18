@@ -58,6 +58,8 @@
 ## Future Goals
 
 - Display the time of creation/update on the items (already generate this data on the backend
+- Sorting by date
+- Labels 
 
 ## Struggles
 
