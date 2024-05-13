@@ -17,7 +17,7 @@
 - AzureSQL database with Azure Server on the backend
 - Hosted by Netlify on the frontend
 - The server plan I'm using isn't very flash so the app runs quite slowly. Cold Start takes approx 1 min.
-- https://benevolent-narwhal-c09433.netlify.app/
+- https://golden-taiyaki-1890f8.netlify.app/
 
 - This is my first ever time full-stack hosting a site. Going forward I am going to look into Docker and Containers.
 
