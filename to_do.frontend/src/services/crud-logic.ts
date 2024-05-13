@@ -1,6 +1,6 @@
 import { TodoItemInterface } from "./interfaces.ts";
 
-const API_URL = "http://localhost:8080/items";
+const API_URL = "https://kabir-to-do-app.azurewebsites.net/items";
 
 export const getAllTodoItems = async (): Promise<TodoItemInterface[]> => {
   try {
