@@ -12,13 +12,12 @@
 - Table name: to_dos
 - API Swagger documentation - http://localhost:8080/swagger-ui/index.html#/
 
-## Hosted Link
+## Hosted Link - not live due to budget
 
 - AzureSQL database with Azure Server on the backend
 - Hosted by Netlify on the frontend
 - The server plan I'm using isn't very flash so the app runs quite slowly. Cold Start takes approx 1 min.
-- https://golden-taiyaki-1890f8.netlify.app/ ** APP IS NO LONGER LIVE DUE TO BUDGETARY ISSUES, PLEASE REFER TO THE DEMO. APOLOGIES **
-  
+- https://golden-taiyaki-1890f8.netlify.app/ 
 - This is my first ever time full-stack hosting a site. Going forward I am going to look into Docker and Containers.
 
 ## MVP
